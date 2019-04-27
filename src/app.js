@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const port = process.env.PORT || 3000;
 const hbs = require('hbs');
 const utils = require('./util/utils.js');
 const app = express();
@@ -14,7 +15,7 @@ hbs.registerPartials(partialsPath);
 app.get('',(req,res)=>{
 	res.render('index',{
 		title:'Home',
-		created_by:'Mayank'
+		created_by:'xxx'
 	});
 })
 app.get('/weather',(req,res)=>{
@@ -55,7 +56,7 @@ app.get('/weather',(req,res)=>{
 app.get('/help',(req,res)=>{
 	res.render('help',{
 		title:'Help',
-		created_by: 'Mayank',
+		created_by: 'xxx',
 		help_text: 'This is a dummy text'
 	})
 });
@@ -63,7 +64,7 @@ app.get('/help',(req,res)=>{
 app.get('/help/*',(req,res)=>{
 	res.render("404",{
 		title:'404',
-		created_by:'Mayank',
+		created_by:'xxx',
 		errorMessage: 'Article Not found'
 	});
 });
@@ -71,11 +72,11 @@ app.get('/help/*',(req,res)=>{
 app.get('*',(req,res)=>{
 	res.render("404",{
 		title:'404',
-		created_by:'Mayank',
+		created_by:'xxx',
 		errorMessage: 'Page Not found'
 	});
 });
-app.listen(3000,()=>{
+app.listen(port,()=>{
 
 	console.log('server started');
 })
