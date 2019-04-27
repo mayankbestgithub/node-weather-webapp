@@ -51,7 +51,13 @@ app.get('/weather',(req,res)=>{
 	
 	
 });
-
+app.get('/about',(req,res)=>{
+	res.render('about',{
+		title:'About',
+		created_by: 'xxx',
+		help_text: 'This is a dummy text'
+	})
+});
 
 app.get('/help',(req,res)=>{
 	res.render('help',{
